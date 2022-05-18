@@ -1,38 +1,132 @@
 .App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(245, 245, 245);
+  overflow: hidden;
+}
+
+.search-and-result {
+  display: flex;
+  margin-top: 20px;
+  gap: 50px;
+  min-height: 310px;
+  min-width: 620px;
+}
+
+.search-result {
+  border-left: rgb(136, 136, 136) solid 1px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-success {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.food-item {
+  height: 50px;
+  min-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px #00000059 solid;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0 20px 6px 0;
+  background-color: #ffffff;
+}
+
+.food-item-calories {
+  margin-top: 16px;
+}
+
+.food-item > .delete-icon {
+  cursor: pointer;
+  height: 30px;
+  width: auto;
+  color: rgb(199, 23, 23);
+}
+
+.tooltip-homemade {
+  position: relative;
+  cursor: help;
+}
+
+.info-icon {
+  width: 25px;
+  height: auto;
+  color: #198754;
+}
+
+.tooltip-text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border: 1px #198754 solid;
+  background-color: white;
+  border-radius: 8px;
+  left: 25px;
+  z-index: 1;
+  padding: 0 5px;
+  visibility: hidden;
+  width: 150px;
+}
+
+.tooltip-homemade:hover .tooltip-text {
+  visibility: visible;
+}
+
+.total-and-items {
+  display: flex;
+  border-top: black solid 1px;
+  padding-top: 20px;
+  justify-content: flex-end;
+  min-width: 670px;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  border: #0000003d solid 2px;
+  padding: 8px;
+  border-radius: 8px;
+  height: 310px;
+  flex: 0 0 auto;
+  width: 200px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.total h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  border-top: 3px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+tr:nth-child(odd) {
+  background-color: #ebeaea;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+table td {
+  text-align: right;
+  padding-right: 6px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table th {
+  padding-left: 6px;
 }
