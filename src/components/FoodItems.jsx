@@ -3,7 +3,7 @@ import FoodItem from "./FoodItem"
 
 const FoodItems = (props) => {
   return (
-    <div>
+    <div className='food-items'>
         {props.total.map((e) => {
           return <FoodItem  element={e}
                             toFixedIfNecessary={props.toFixedIfNecessary}

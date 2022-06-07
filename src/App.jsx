@@ -72,6 +72,7 @@ function App() {
         />
         <SearchResult loading={loading}
                       data={data}
+                      amount={amount}
                       amountForDisplay={amountForDisplay}
                       toFixedIfNecessary={toFixedIfNecessary}
                       setTotal={setTotal}

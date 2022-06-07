@@ -6,38 +6,37 @@ const SearchResult = (props) => {
     <div className="search-result">
         {!props.loading ? (props.data ? 
         <div className='search-success'>
-            <h4>stats for {props.amountForDisplay} grams of {props.data.name}</h4>
-            <br />
+            <h4>Stats for {props.amount} grams of {props.data.name}</h4>
             <br />
             <table>
                 <tbody>
                     <tr>
                         <th>Calories</th>
-                        <td>{props.toFixedIfNecessary(props.data.calories * (props.amountForDisplay/100), 2)} kcal</td>
+                        <td>{props.toFixedIfNecessary(props.data.calories * (props.amount/100), 2)} kcal</td>
                     </tr>
                     <tr>
                         <th>Carbs</th>
-                        <td>{props.toFixedIfNecessary(props.data.carbohydrates_total_g * (props.amountForDisplay/100), 2)} g</td>
+                        <td>{props.toFixedIfNecessary(props.data.carbohydrates_total_g * (props.amount/100), 2)} g</td>
                     </tr>
                     <tr>
                         <th>Sugar</th>
-                        <td>{props.toFixedIfNecessary(props.data.sugar_g * (props.amountForDisplay/100), 2)} g</td>
+                        <td>{props.toFixedIfNecessary(props.data.sugar_g * (props.amount/100), 2)} g</td>
                     </tr>
                     <tr>
                         <th>Fat</th>
-                        <td>{props.toFixedIfNecessary(props.data.fat_total_g * (props.amountForDisplay/100), 2)} g</td>
+                        <td>{props.toFixedIfNecessary(props.data.fat_total_g * (props.amount/100), 2)} g</td>
                     </tr>
                     <tr>
                         <th>Protein</th>
-                        <td>{props.toFixedIfNecessary(props.data.protein_g * (props.amountForDisplay/100), 2)} g</td>
+                        <td>{props.toFixedIfNecessary(props.data.protein_g * (props.amount/100), 2)} g</td>
                     </tr>
                     <tr>
                         <th>Fiber</th>
-                        <td>{props.toFixedIfNecessary(props.data.fiber_g * (props.amountForDisplay/100), 2)} g</td>
+                        <td>{props.toFixedIfNecessary(props.data.fiber_g * (props.amount/100), 2)} g</td>
                     </tr>
                     <tr>
                         <th>Sodium</th>
-                        <td>{props.toFixedIfNecessary(props.data.sodium_mg * (props.amountForDisplay/100), 2)} mg</td>
+                        <td>{props.toFixedIfNecessary(props.data.sodium_mg * (props.amount/100), 2)} mg</td>
                     </tr>
                 </tbody>
             </table>
@@ -46,7 +45,7 @@ const SearchResult = (props) => {
                     alert("You've reached the maximum amount of items. Please remove some if you want to add others.")
                     return
                 }
-                props.setTotal((prevTotal) => [...prevTotal, { data: props.data, amount: props.amountForDisplay, key: random() }])
+                props.setTotal((prevTotal) => [...prevTotal, { data: props.data, amount: props.amount, key: random() }])
             }}>Add to total
             </button>
         </div>
